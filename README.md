@@ -36,6 +36,7 @@ Test request using curl:
 
 
 Version 1 can optionally be called without specifying the version
+
   curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages
 
   curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages/v1
