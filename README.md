@@ -20,27 +20,28 @@ If no version is specified version 1 is used.
 
 
 Install and test instructions:
+--------------
 
-mvn clean install
+  mvn clean install
 
 import the war file target/MessageBoardWebApp.war into your favorite web container
 
 or use the maven plugin part of the pom.xml for testing.
 
-mvn jetty:run
+  mvn jetty:run
 
 Test request using curl:
 
-curl -v -X POST -H 'Content-Type: application/json' http://localhost:8080/webapi/messageboard/createMessage --data '{"title":"sample title", "content": "sample content", "sender": "sample sender", "url": "http://google.com" }'
+  curl -v -X POST -H 'Content-Type: application/json' http://localhost:8080/webapi/messageboard/createMessage --data '{"title":"sample title", "content": "sample content", "sender": "sample sender", "url": "http://google.com" }'
 
 
-curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages
+  curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages
 or alternative v1 URL
-curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages/v1
+  curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages/v1
 
-curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages/v2
+  curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages/v2
 
-curl -v -X GET -H 'Accept: application/xml'  http://localhost:8080/webapi/messageboard/listMessages/v2
+  curl -v -X GET -H 'Accept: application/xml'  http://localhost:8080/webapi/messageboard/listMessages/v2
 
 The project comes with some basic Jersey test cases to validate the functionality of the messages board application. These tests are run automatically part of the mvn install or can be individually run using mvn test.
 
