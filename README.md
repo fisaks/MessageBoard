@@ -14,7 +14,7 @@ where ${version} is either v1 or v2.
   v1 only returns limited meta data in the response and supports only json response format.
 
   v2 returns full meta data in the response and supports both json and xml response format. 
-     The response format is choosen based on the Accept header of the client.
+     The response format is chosen based on the Accept header of the client.
 
 If no version is specified version 1 is used.
 
@@ -35,8 +35,9 @@ Test request using curl:
   curl -v -X POST -H 'Content-Type: application/json' http://localhost:8080/webapi/messageboard/createMessage --data '{"title":"sample title", "content": "sample content", "sender": "sample sender", "url": "http://google.com" }'
 
 
+Version 1 can optionally be called without specifying the version
   curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages
-or alternative v1 URL
+
   curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages/v1
 
   curl -v -X GET -H 'Accept: application/json'  http://localhost:8080/webapi/messageboard/listMessages/v2
